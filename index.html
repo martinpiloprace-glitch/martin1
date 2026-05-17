@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Martin Pilo - Webdesign & Frontend Tvorba Brno</title>
+    <meta name="description" content="Exkluzivní nabídka od profesionálního webdesignéra. Kompletní 5-ti stránkový web zcela zdarma pro prvních 5 zájemců. Tvorba webu Brno.">
+    <meta name="keywords" content="Martin Pilo, tvorba webu zdarma, webdesign Brno, 5 stránkový web, frontend, HTML, CSS, JavaScript, portfolio, webstudio Brno">
+    <meta name="author" content="Martin Pilo">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://martinpiloprace-glitch.github.io/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://martinpiloprace-glitch.github.io/">
+    <meta property="og:title" content="Martin Pilo - Webdesign (Exkluzivní Start-up Nabídka)">
+    <meta property="og:description" content="Limitovaná akce: Kompletní 5-ti stránkový web zcela zdarma pro prvních 5 zájemců. Objevte mé portfolio.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/193245455?v=4">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="cs_CZ">
+
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/193245455?v=4" type="image/png">
+    <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/193245455?v=4">
+
+    <style>
+        /* BASE DESIGN */
+        * { box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fcf9f9;
+            color: #222;
+        }
+
+        /* ŠIROKOÚHLÁ STRUKTURA */
+        .wrapper {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* HEADER SEKCE */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #800000;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 0 5px 0;
+        }
+        .subtitle {
+            color: #800000;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0 0 25px 0;
+        }
+
+        /* BADGES */
+        .tech-badges {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .tech-badge {
+            border: 1px solid #800000;
+            color: #800000;
+            background: transparent;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* O 30 % VĚTŠÍ EXKLUZIVNÍ STRATEGICKÝ BANNER */
+        .promo-banner {
+            background: #fffafa;
+            border: 2px solid #800000; /* Silnější rámeček pro zvýraznění */
+            padding: 35px; /* Zvětšeno z 25px (cca +30%) */
+            border-radius: 8px;
+            text-align: center;
+            color: #222;
+            font-size: 1.55rem; /* Zvětšeno z 1.2rem (cca +30%) */
+            line-height: 1.6;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 15px rgba(128, 0, 0, 0.05);
+        }
+        .promo-banner strong {
+            color: #800000;
+            font-size: 1.75rem; /* Zvětšeno z 1.35rem (cca +30%) */
+            display: block;
+            margin: 10px 0;
+        }
+
+        /* O 30 % VĚTŠÍ HLAVNÍ CTA TLAČÍTKO POŽADAVKU */
+        .main-cta {
+            display: block;
+            width: 100%;
+            background-color: #800000;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 24px; /* Zvětšeno z 18px (cca +30%) */
+            font-size: 1.7rem; /* Zvětšeno z 1.3rem (cca +30%) */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            margin-bottom: 60px;
+        }
+        .main-cta:hover {
+            background-color: #600000;
+            transform: translateY(-2px);
+        }
+
+        /* PORTFOLIO GRID SEKCE */
+        .section-title {
+            color: #800000;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            border-left: 5px solid #800000;
+            padding-left: 15px;
+            font-weight: bold;
+        }
+
+        .portfolio-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        /* KARTY PROJEKTŮ */
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e1dddd;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(128, 0, 0, 0.08);
+        }
+
+        /* HLAVNÍ PROJEKT (TISNOV) */
+        .project-card.featured {
+            grid-row: span 2;
+            background: #fffdfd;
+            border-color: #800000;
+        }
+
+        .project-card h3 {
+            color: #800000;
+            font-size: 1.6rem;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .project-card.featured h3 {
+            font-size: 2rem;
+        }
+        .project-card p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0 0 20px 0;
+            flex-grow: 1;
+        }
+        .project-card .tech-used {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .project-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #800000;
+            color: #800000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+        .project-btn:hover {
+            background: #800000;
+            color: white;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid #e1dddd;
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .footer-title {
+            color: #800000;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        .cv-btn {
+            padding: 12px 28px;
+            background: transparent;
+            color: #222;
+            border: 1px solid #222;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .cv-btn:hover {
+            background: #222;
+            color: white;
+        }
+        .footer-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.1rem;
+        }
+        .footer-right a {
+            color: #800000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .social-link {
+            color: #222;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .social-link:hover {
+            color: #800000;
+        }
+
+        /* MODÁLNÍ OKNO SYSTEM */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-box {
+            background: white;
+            padding: 40px;
+            border-radius: 6px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            border-top: 4px solid #800000;
+        }
+        .modal-overlay.active .modal-box { transform: translateY(0); }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: #aaa;
+            cursor: pointer;
+        }
+        .modal-close:hover { color: #800000; }
+        .modal-title { color: #800000; margin-top: 0; margin-bottom: 15px; font-size: 1.8rem; text-transform: uppercase; }
+        .modal-text { font-size: 1.05rem; line-height: 1.6; color: #444; margin-bottom: 25px; }
+        .email-highlight {
+            display: inline-block;
+            background: #fffafa;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #800000;
+            border: 1px dashed #800000;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        /* RESPONSIVITA */
+        @media (max-width: 1100px) {
+            .portfolio-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            .project-card.featured {
+                grid-row: auto;
+                grid-column: span 2;
+            }
+        }
+        @media (max-width: 768px) {
+            .promo-banner {
+                font-size: 1.25rem;
+                padding: 25px;
+            }
+            .promo-banner strong {
+                font-size: 1.45rem;
+            }
+            .main-cta {
+                font-size: 1.3rem;
+                padding: 18px;
+            }
+            .portfolio-container {
+                grid-template-columns: 1fr;
+            }
+            .project-card.featured {
+                grid-column: auto;
+            }
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-left {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .footer-right {
+                flex-direction: column;
+                gap: 10px;
+            }
+            h1 { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    
+    <header>
+        <h1>Martin Pilo</h1>
+        <div class="subtitle">Webdesign & Frontend Tvorba</div>
+        
+        <div class="tech-badges">
+            <span class="tech-badge">HTML5</span>
+            <span class="tech-badge">CSS3</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Git & GitHub</span>
+            <span class="tech-badge">Responsive UI</span>
+        </div>
+    </header>
+
+    <div class="promo-banner">
+        EXKLUZIVNÍ START-UP NABÍDKA:
+        <strong>Kompletní 5-ti stránkový web zcela zdarma pro prvních 5 zájemců.</strong>
+        Tento projekt je kapacitně limitován pro vybrané firemní prezentace.
+    </div>
+
+    <button class="main-cta" onclick="openModal()">✉️ Poptat 5-ti stránkový web</button>
+
+    <main>
+        <div class="section-title">Portfolio</div>
+        
+        <div class="portfolio-container">
+            
+            <div class="project-card featured">
+                <div>
+                    <h3>🌐 tisnov</h3>
+                    <p>Rozsáhlý projekt zaměřený na komplexní architekturu webové prezentace, informační strukturu a pokročilé sémantické kódování. Aktuálně ve fázi intenzivního vývoje uživatelského rozhraní a komponent.</p>
+                    <div class="tech-used">HTML5 / CSS3 / JavaScript / UX Architecture</div>
+                </div>
+                <a href="https://martinpiloprace-glitch.github.io/tisnov/" target="_blank" class="project-btn">Prohlédnout projekt</a>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <h3>📦 HOTOVOGITHUB</h3>
+                    <p>Projekt aktuálně ve fázi intenzivního budování a vývoje struktury. Zaměřeno na čisté nasazení, testování repozitářů a správu frontendového workflow přes GitHub Pages.</p>
+                    <div class="tech-used">Git / GitHub Actions / Workflow / In Development</div>
+                </div>
+                <a href="https://martinpiloprace-glitch.github.io/HOTOVOGITHUB/" target="_blank" class="project-btn">Prohlédnout projekt</a>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <h3>🎨 ave1</h3>
+                    <p>Moderní UI/UX šablona zaměřená na pokročilé CSS kódování, stylování komponent a precizní responzivní chování na všech typech displejů.</p>
+                    <div class="tech-used">HTML5 / CSS Grid / Flexbox</div>
+                </div>
+                <a href="https://martinpiloprace-glitch.github.io/ave1/" target="_blank" class="project-btn">Prohlédnout projekt</a>
+            </div>
+
+            <div class="project-card">
+                <div>
+                    <h3>🛒 potraviny-kopriva</h3>
+                    <p>E-commerce koncept pro lokální prodejny. Testování optimálního HTML rozvržení a navigace pro budoucí nasazení internetového obchodu.</p>
+                    <div class="tech-used">Semantic HTML / Navigation Design</div>
+                </div>
+                <a href="https://martinpiloprace-glitch.github.io/potraviny-kopriva/" target="_blank" class="project-btn">Prohlédnout projekt</a>
+            </div>
+
+            <div class="project-card" style="border-style: dashed;">
+                <div>
+                    <h3>✨ Váš budoucí projekt</h3>
+                    <p>Zde může být váš nový firemní web postavený na čistém kódu, s extrémní rychlostí načítání a perfektním zobrazením na mobilech.</p>
+                    <div class="tech-used">HTML5 / CSS3 / JavaScript / SEO</div>
+                </div>
+                <button class="project-btn" onclick="openModal()" style="background: none; cursor: pointer; width: 100%;">Zarezervovat web</button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <span class="footer-title">CV & Kontakt</span>
+            <a href="https://martinpiloprace-glitch.github.io/CV/" target="_blank" class="cv-btn">Zobrazit profesní CV</a>
+        </div>
+        <div class="footer-right">
+            <a href="https://linkedin.com" target="_blank" class="social-link">LinkedIn</a>
+            <a href="https://github.com/martinpiloprace-glitch" target="_blank" class="social-link">GitHub</a>
+            <span>✉️ <a href="mailto:martinpiloprace@gmail.com">martinpiloprace@gmail.com</a></span>
+        </div>
+    </footer>
+
+</div>
+
+<div id="contactModal" class="modal-overlay" onclick="closeModalOutside(event)">
+    <div class="modal-box">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <h2 class="modal-title">Start-up Spolupráce</h2>
+        <p class="modal-text">
+            V rámci budování prémiových lokálních referencí nabízím vytvoření <strong>kompletního 5-ti stránkového webu zcela zdarma</strong>. 
+            <br><br>
+            Nabídka platí výhradně pro prvních 5 schválených projektů.
+            <br><br>
+            Zašlete stručný záměr vašeho webu na e-mail:
+            <br>
+            <span class="email-highlight">martinpiloprace@gmail.com</span>
+            <br><br>
+            Obratem se vám ozvu a zkonzultujeme možnosti realizace.
+        </p>
+        <button class="main-cta" style="margin: 0; padding: 12px; font-size: 1.1rem;" onclick="closeModal()">Rozumím</button>
+    </div>
+</div>
+
+<script>
+    function openModal() { 
+        document.getElementById("contactModal").classList.add("active"); 
+    }
+    function closeModal() { 
+        document.getElementById("contactModal").classList.remove("active"); 
+    }
+    function closeModalOutside(event) {
+        if (event.target.id === "contactModal") {
+            closeModal();
+        }
+    }
+</script>
+
+</body>
+</html>
